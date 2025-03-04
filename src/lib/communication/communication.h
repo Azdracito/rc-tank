@@ -7,6 +7,7 @@
 
 struct JoystickMessage {
     int xAxis;
+    int yAxis;
 };
 
 class Communication {

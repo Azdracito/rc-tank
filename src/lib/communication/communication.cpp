@@ -19,10 +19,7 @@ void Communication::onDataReceived(const uint8_t* mac, const uint8_t* incomingDa
     JoystickMessage message;
     memcpy(&message, incomingData, sizeof(message));
 
-    Serial.printf("Bytes received: %d\n", len);
-    Serial.printf("VRx: %d\n", message.xAxis);
-
     if (motorInstance) {
-        motorInstance->move(message.xAxis);
+        motorInstance->move(message.xAxis, message.yAxis);
     }
 }
